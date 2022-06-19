@@ -70,9 +70,7 @@ Resources:
               #!/bin/bash
               sudo apt-get update -y
               sudo apt-get install apache2 -y
-              sudo systemctl start apache2.service  
-              cd /var/www/html
-              curl https://infract-proj.s3.amazonaws.com/index.html > index.html        
+              sudo systemctl start apache2.service         
       # ToDo: AMI ID of Ubuntu Linux machine. Too get one, try creating a VM from the web console. 
       ImageId: !Ref AMI
       # ToDo: Change the key-pair name, as applicable to you. 
@@ -139,7 +137,7 @@ Resources:
       HealthCheckProtocol: HTTP
       HealthCheckTimeoutSeconds: 8
       HealthyThresholdCount: 2
-      Port: 8080
+      Port: 80
       Protocol: HTTP
       UnhealthyThresholdCount: 5
       VpcId: 
